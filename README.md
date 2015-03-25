@@ -1,6 +1,6 @@
 # google-sheets-api
 
-An unofficial client for reading data from Google Sheets, since [googleapis does not come with one](https://github.com/google/google-api-nodejs-client/tree/master/apis).
+An unofficial client for *reading* data from Google Sheets, since [googleapis does not come with one](https://github.com/google/google-api-nodejs-client/tree/master/apis).
 
 ## Usage
 
@@ -12,13 +12,13 @@ An unofficial client for reading data from Google Sheets, since [googleapis does
 
 2.  Create a project in https://console.developers.google.com/project - for example: "Sheets App"
 3.  Enable Drive API for project under *APIs & auth* > *APIs*
-3.  Create service auth credentials for project under
+4.  Create service auth credentials for project under
     *APIs & auth* > *Credentials* > *Create new Client ID*: *Service account*
 
 
-4.  Collect the listed service email address
-4.  Regenerate and download the P12 key
-5.  Convert the .p12 file into .pem format:
+5.  Collect the listed service email address
+6.  Regenerate and download the P12 key
+7.  Convert the .p12 file into .pem format:
 
     ```shell
     openssl pkcs12 -in *.p12 -nodes -nocerts > sheets.pem
@@ -26,8 +26,8 @@ An unofficial client for reading data from Google Sheets, since [googleapis does
 
     when prompted for password, it's `notasecret`
 
-6.  Share the Sheets document to *service email address* using the *Share* button
-7.  Pick up the Sheets document id from URL or Share dialog. Example:
+8.  Share the Sheets document to *service email address* using the *Share* button
+9.  Pick up the Sheets document id from URL or Share dialog. Example:
 
     ```shell
     # Sheets document browser URL
@@ -36,7 +36,7 @@ An unofficial client for reading data from Google Sheets, since [googleapis does
     1FHa0vyPxXj3BtqigQ3LcwPoa7ldlRtUDx6fFV6CqkNE
     ```
 
-8.  Put it all together:
+9.  Put it all together:
 
     ```javascript
     var fs = require('fs');
@@ -68,7 +68,7 @@ An unofficial client for reading data from Google Sheets, since [googleapis does
     });
     ```
 
-9.  Success!
+10. Success!
 
 
 ## API
