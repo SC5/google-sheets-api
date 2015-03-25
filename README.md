@@ -41,7 +41,7 @@ An unofficial client for *reading* data from Google Sheets, since [googleapis do
     ```javascript
     var fs = require('fs');
     var Promise = require('bluebird');
-    var Sheets = require('google-sheets-api');
+    var Sheets = require('google-sheets-api').Sheets;
 
     // TODO: Replace these values with yours
     var documentId = 'generated-by-sheets';
