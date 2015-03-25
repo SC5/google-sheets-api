@@ -2,6 +2,12 @@
 logs
 *.log
 
+# Project files
+*.sublime-*
+
+# Local files
+*.pem
+
 # Runtime data
 pids
 *.pid
@@ -26,3 +32,4 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+.env
