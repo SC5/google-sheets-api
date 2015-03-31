@@ -1,5 +1,7 @@
 # google-sheets-api
 
+[![Build Status](https://travis-ci.org/SC5/google-sheets-api.svg?branch=master)](https://travis-ci.org/SC5/google-sheets-api)
+
 An unofficial client for *reading* data from Google Sheets, since [googleapis does not come with one](https://github.com/google/google-api-nodejs-client/tree/master/apis).
 
 ## Usage
