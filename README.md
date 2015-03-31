@@ -75,6 +75,8 @@ An unofficial client for *reading* data from Google Sheets, since [googleapis do
 
 Relevant API methods, see code for details and internal ones.
 
+**NOTE:** All the methods returns a Promise.
+
 ### Sheets(options)
 
 Initialize Sheets client with provided options
@@ -98,6 +100,18 @@ Fetch info from one sheet
 * @param  {String} id      Sheets document id
 * @param  {String} sheetId Worksheet id (use getSheets to fetch them)
 * @return {Promise}        A promise that resolves to sheet info containing id, title and latest update info
+
+
+### sheets.getRange(id, sheetId, rangeInfo)
+
+Retrieve cells based on given range
+
+**NOTE:** If there are missing cells (no content) this function adds them there (unlike other functions), thus you'll always have full matrix
+
+* @param  {String} id        Sheet document id
+* @param  {String} sheetId   Sheet id
+* @param  {Mixed} rangeInfo  Range info as object or string like `A2:D5` or `A2:`
+* @return {Array}            Rows containing cells, like `[[{A1}, {B1}], [{A2}, {B2}]]`
 
 
 ### sheets.getCells(id, sheetId)
