@@ -58,12 +58,12 @@ An unofficial client for *reading* data from Google Sheets, since [googleapis do
       var sheetInfo = sheetsInfo[0];
       return Promise.all([
         sheets.getSheet(documentId, sheetInfo.id),
-        sheets.getCells(documentId, sheetInfo.id)
+        sheets.getRange(documentId, sheetInfo.id, 'A1:C3')
       ]);
     })
-    .spread(function(sheet, cells) {
-      // TODO: Do something with cell contents
-      console.log('Sheets contents:', sheet, cells);
+    .spread(function(sheet, rows) {
+      // TODO: Do something with cell within range
+      console.log('Sheets contents:', sheet, rows);
     })
     .catch(function(err){
       console.error(err, 'Failed to read Sheets document');
