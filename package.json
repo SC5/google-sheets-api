@@ -1,6 +1,6 @@
 {
   "name": "google-sheets-api",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Unofficial Google Sheets node API",
   "main": "lib/index.js",
   "scripts": {
