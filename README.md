@@ -124,6 +124,13 @@ Fetch cell contents from one worksheet
 * @param  {String} sheetId Worksheet id (use getSheets to fetch them)
 * @return {Promise}        A promise that resolves to a list of rows
 
+## Changelog
+
+- 0.2.2: Fixed the issue the range with double digits, like `A1:C10`
+- 0.2.1: Fixed the documentation
+- 0.2.0: Added support for getRange()
+- 0.1.0: Initial release
+
 ## License
 
 Module is MIT -licensed

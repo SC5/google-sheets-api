@@ -45,7 +45,7 @@ describe('Sheets', function() {
   it('gets cells', function(done) {
     sheets.getCells()
     .then(function(cells){
-      expect(cells.length).toBe(6);
+      expect(cells.length).toBe(13);
       done();
     });
   });
@@ -56,6 +56,11 @@ describe('Sheets', function() {
     expect(info.from.row).toBe(1);
     expect(info.to.col).toBe('B');
     expect(info.to.row).toBe(2);
+
+    // Test with double digits, too
+    var info = sheets.parseRangeInfo('A1:B10');
+    expect(info.from.row).toBe(1);
+    expect(info.to.row).toBe(10);
   });
 
   it('parses partial range', function() {
@@ -77,7 +82,7 @@ describe('Sheets', function() {
   it('returns rows with partial range', function(done) {
     sheets.getRange(null, null, 'A3:')
     .then(function(rows){
-      expect(rows.length).toBe(1);
+      expect(rows.length).toBe(8);
       expect(rows[0].length).toBe(3);
       done();
     });
@@ -95,7 +100,7 @@ describe('Sheets', function() {
   it('returns rows with no range', function(done) {
     sheets.getRange(null, null, null)
     .then(function(rows){
-      expect(rows.length).toBe(3);
+      expect(rows.length).toBe(10);
       done();
     });
   });
