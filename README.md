@@ -140,6 +140,7 @@ Fetch cell contents from one worksheet
 
 ## Changelog
 
+- 0.2.3: Improved documentation
 - 0.2.2: Fixed the issue the range with double digits, like `A1:C10`
 - 0.2.1: Fixed the documentation
 - 0.2.0: Added support for getRange()
