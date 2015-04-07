@@ -4,6 +4,23 @@
 
 An unofficial client for *reading* data from Google Sheets, since [googleapis does not come with one](https://github.com/google/google-api-nodejs-client/tree/master/apis).
 
+**Table of contents**
+
+<!-- MarkdownTOC depth=3 autolink=true bracket=round -->
+
+- [Usage](#usage)
+- [API](#api)
+    - [Sheets(options)](#sheetsoptions)
+    - [sheets.getSheets(id, sheetId)](#sheetsgetsheetsid-sheetid)
+    - [sheets.getSheet(id, sheetId)](#sheetsgetsheetid-sheetid)
+    - [sheets.getRange(id, sheetId, rangeInfo)](#sheetsgetrangeid-sheetid-rangeinfo)
+    - [sheets.getCells(id, sheetId)](#sheetsgetcellsid-sheetid)
+- [Changelog](#changelog)
+- [License](#license)
+- [Credit](#credit)
+
+<!-- /MarkdownTOC -->
+
 ## Usage
 
 1.  Install module
@@ -12,12 +29,9 @@ An unofficial client for *reading* data from Google Sheets, since [googleapis do
     npm install google-sheets-api
     ```
 
-2.  Create a project in https://console.developers.google.com/project - for example: "Sheets App"
+2.  Create a project in [Google Developer Console](https://console.developers.google.com/project), for example: "Sheets App"
 3.  Enable Drive API for project under *APIs & auth* > *APIs*
-4.  Create service auth credentials for project under
-    *APIs & auth* > *Credentials* > *Create new Client ID*: *Service account*
-
-
+4.  Create service auth credentials for project under *APIs & auth* > *Credentials* > *Create new Client ID*: *Service account*
 5.  Collect the listed service email address
 6.  Regenerate and download the P12 key
 7.  Convert the .p12 file into .pem format:
@@ -134,3 +148,11 @@ Fetch cell contents from one worksheet
 ## License
 
 Module is MIT -licensed
+
+## Credit
+
+Module was initiated by
+
+<a href="http://sc5.io">
+  <img src="http://logo.sc5.io/78x33.png" style="padding: 4px 0;">
+</a>
