@@ -115,7 +115,7 @@ Fetch info from one sheet
 
 * @param  {String} id      Sheets document id
 * @param  {String} sheetId Worksheet id (use getSheets to fetch them)
-* @return {Promise}        A promise that resolves to sheet info containing id, title and latest update info
+* @return {Promise}        A promise that resolves to a worksheet info containing id, title, rowCount, colCount and latest update info
 
 
 ### sheets.getRange(id, sheetId, rangeInfo)
