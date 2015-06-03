@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var Promise = require('bluebird');
+var Promise = require('polyfill-promise');
 var proxyquire = require('proxyquire');
 
 
