@@ -74,10 +74,10 @@ An unofficial client for *reading* data from Google Sheets, since [googleapis do
         sheets.getRange(documentId, sheetInfo.id, 'A1:C3')
       ]);
     })
-	.then(function(sheets) {
-		console.log('Sheets metadata:', sheets[0]);
-		console.log('Sheets contents:', sheets[1]);
-	})
+    .then(function(sheets) {
+      console.log('Sheets metadata:', sheets[0]);
+      console.log('Sheets contents:', sheets[1]);
+    })
     .catch(function(err){
       console.error(err, 'Failed to read Sheets document');
     });
