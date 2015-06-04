@@ -56,7 +56,6 @@ An unofficial client for *reading* data from Google Sheets, since [googleapis do
 
     ```javascript
     var fs = require('fs');
-    var Promise = require('bluebird');
     var Sheets = require('google-sheets-api').Sheets;
 
     // TODO: Replace these values with yours
@@ -75,10 +74,10 @@ An unofficial client for *reading* data from Google Sheets, since [googleapis do
         sheets.getRange(documentId, sheetInfo.id, 'A1:C3')
       ]);
     })
-    .spread(function(sheet, rows) {
-      // TODO: Do something with cell within range
-      console.log('Sheets contents:', sheet, rows);
-    })
+	.then(function(sheets) {
+		console.log('Sheets metadata:', sheets[0]);
+		console.log('Sheets contents:', sheets[1]);
+	})
     .catch(function(err){
       console.error(err, 'Failed to read Sheets document');
     });
