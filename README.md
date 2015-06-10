@@ -91,7 +91,7 @@ An unofficial client for *reading* data from Google Sheets, since [googleapis do
 
 Relevant API methods, see code for details and internal ones.
 
-**NOTE:** All the methods returns a Promise.
+**NOTE:** All the methods returns a native (polyfilled when needed) Promise.
 
 ### Sheets(options)
 
@@ -140,6 +140,7 @@ Fetch cell contents from one worksheet
 
 ## Changelog
 
+- 0.4.0: Added support for setting auth scope (makes module usable with other Google APIs as well)
 - 0.3.0: Using native promises if available, added `rowCount` and `colCount` to `getSheet()` response
 - 0.2.3: Improved documentation
 - 0.2.2: Fixed the issue the range with double digits, like `A1:C10`
@@ -153,7 +154,7 @@ Module is MIT -licensed
 
 ## Credit
 
-Module was initiated by
+Module is backed by
 
 <a href="http://sc5.io">
   <img src="http://logo.sc5.io/78x33.png" style="padding: 4px 0;">
