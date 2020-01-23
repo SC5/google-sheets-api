@@ -140,6 +140,7 @@ Fetch cell contents from one worksheet
 
 ## Changelog
 
+- 0.4.2: Updated dependencies / fixed vulnerabilities
 - 0.4.1: Fixed the double letter range issue, like: `A1:AA5`
 - 0.4.0: Added support for setting auth scope (makes module usable with other Google APIs as well)
 - 0.3.0: Using native promises if available, added `rowCount` and `colCount` to `getSheet()` response
