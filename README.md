@@ -8,16 +8,17 @@ An unofficial client for *reading* data from Google Sheets, since [googleapis do
 
 <!-- MarkdownTOC depth=3 autolink=true bracket=round -->
 
-- [Usage](#usage)
-- [API](#api)
+- [google-sheets-api](#google-sheets-api)
+  - [Usage](#usage)
+  - [API](#api)
     - [Sheets(options)](#sheetsoptions)
     - [sheets.getSheets(id, sheetId)](#sheetsgetsheetsid-sheetid)
     - [sheets.getSheet(id, sheetId)](#sheetsgetsheetid-sheetid)
     - [sheets.getRange(id, sheetId, rangeInfo)](#sheetsgetrangeid-sheetid-rangeinfo)
     - [sheets.getCells(id, sheetId)](#sheetsgetcellsid-sheetid)
-- [Changelog](#changelog)
-- [License](#license)
-- [Credit](#credit)
+  - [Changelog](#changelog)
+  - [License](#license)
+  - [Credit](#credit)
 
 <!-- /MarkdownTOC -->
 
@@ -140,6 +141,7 @@ Fetch cell contents from one worksheet
 
 ## Changelog
 
+- 0.4.3: Fixed JWT auth issue with recent Google API
 - 0.4.2: Updated dependencies / fixed vulnerabilities
 - 0.4.1: Fixed the double letter range issue, like: `A1:AA5`
 - 0.4.0: Added support for setting auth scope (makes module usable with other Google APIs as well)
