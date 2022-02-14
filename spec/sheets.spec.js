@@ -46,13 +46,11 @@ describe("Sheets", function () {
               },
               values: {
                 get: function ({range}) {
-                  console.log('<range>', range)
                   // Partial range --> 'Sheet1!'
                   if(range.includes('!')) {
                     // 'Sheet1!A3:A'
-                    const match = range.match(/([a-zA-Z]+)(\d+):([a-zA-Z]+)(\d*)/);
-                    console.log('<match>', match)
-                    if (match[1] === match[3]) {
+                    const partsMatch = range.match(/([a-zA-Z]+)(\d+):([a-zA-Z]+)(\d*)/);
+                    if (partsMatch[1] === partsMatch[3]) {
                       return Promise.resolve(rangeOfValues2)
                     }
                     return Promise.resolve(rangeOfValues1);
@@ -138,15 +136,12 @@ describe("Sheets", function () {
       //   [ { row: 9, column: 'A', content: 'A9' }, { row: 9, column: 'B', content: '' }, { row: 9, column: 'C', content: '' } ],
       //   [ { row: 10, column: 'A', content: 'A10' }, { row: 10, column: 'B', content: '' }, { row: 10, column: 'C', content: '' } ],
       // ]
-
-      // console.log('<ROWS>', rows)
       expect(rows.length).toBe(8);
       expect(rows[0].length).toBe(3);
       done();
     });
   });
 
-  // DONE
   it("returns rows with full range", function (done) {
     sheets.getRange(null, 807593019, "B1:C2").then(function (rows) {
       // rows = [
@@ -165,11 +160,8 @@ describe("Sheets", function () {
     });
   });
 
-  // DONE
   it("returns rows with no range", function (done) {
     sheets.getRange(null, 807593019, null).then(function (rows) {
-      console.log('<Rows>', rows)
-      // console.log('<<ROWS>>', rows)
       // rows = [
       //   [
       //     { row: 1, column: "A", content: "A1" },

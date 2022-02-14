@@ -1,6 +1,6 @@
 {
     "data": {
-      "range": "",
+      "range": "Sheet3",
       "majorDimension": "ROWS",
       "values": [
         [ "A1", "B1", "C1" ],
