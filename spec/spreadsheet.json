@@ -1,0 +1,26 @@
+{
+    "data": {
+      "spreadsheetId": "",
+      "properties": {
+        "title": "A test sheet"
+      },
+      "sheets": [
+        {
+          "properties": {
+            "sheetId": 807593019,
+            "title": "Sheet3",
+            "gridProperties": {
+              "columnCount": 26,
+              "rowCount": 1000
+            }
+          }
+        }
+      ],
+      "namedRanges": [{}],
+      "spreadsheetUrl": "",
+      "developerMetadata": [{}],
+      "dataSources": [{}],
+      "dataSourceSchedules": [{}]
+    }
+  }
+  

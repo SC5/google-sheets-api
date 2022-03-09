@@ -1,0 +1,11 @@
+{
+    "data": {
+      "range": "B1:C2",
+      "majorDimension": "ROWS",
+      "values": [
+        ["B1", "C1"],
+        ["", "C2"]
+      ]
+    }
+  }
+  

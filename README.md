@@ -116,19 +116,30 @@ Fetch info from one sheet
 
 * @param  {String} id      Sheets document id
 * @param  {String} sheetId Worksheet id (use getSheets to fetch them)
-* @return {Promise}        A promise that resolves to a worksheet info containing id, title, rowCount, colCount and latest update info
+* @return {Promise}        A promise that resolves to a worksheet info containing id, title, rowCount, colCount
 
 
 ### sheets.getRange(id, sheetId, rangeInfo)
 
-Retrieve cells based on given range
+Retrieve cells data based on given range
 
-**NOTE:** If there are missing cells (no content) this function adds them there (unlike other functions), thus you'll always have full matrix
-
+**NOTE:** 
+*  * All below ranges are v4 compatible but full matrix are [SUPPORTED] only for few of them:
+*
+* -  [SUPPORTED] "Sheet1!A1:B2" refers to the first two cells in the top two rows of Sheet1.
+* -  [SUPPORTED] "A3:" refres to all cells starts from 'A' column and 3rd row.
+* - "Sheet1!A:A" refers to all the cells in the first column of Sheet1.
+* - "Sheet1!1:2" refers to all the cells in the first two rows of Sheet1.
+* - "Sheet1!A5:A" refers to all the cells of the first column of Sheet 1, from row 5 onward.
+* - [SUPPORTED]"Sheet1" refers to all the cells in Sheet1.
+* - "'My Custom Sheet'!A:A" refers to all the cells in a sheet named "My Custom Sheet."
+*   Single quotes are required for sheet names with spaces, special characters, or an alphanumeric combination.
+*
+*
 * @param  {String} id        Sheet document id
 * @param  {String} sheetId   Sheet id
-* @param  {Mixed} rangeInfo  Range info as object or string like `A2:D5` or `A2:`
-* @return {Array}            Rows containing cells, like `[[{A1}, {B1}], [{A2}, {B2}]]`
+* @param  {Mixed} rangeInfo  Range info
+* @return {Array}            Rows containing cells
 
 
 ### sheets.getCells(id, sheetId)
@@ -139,8 +150,49 @@ Fetch cell contents from one worksheet
 * @param  {String} sheetId Worksheet id (use getSheets to fetch them)
 * @return {Promise}        A promise that resolves to a list of rows
 
+### sheets.getRowAndColCount(data)
+
+Get total count of rows and columns in a data array
+
+* @param {Array} data Title, name of the sheet
+* @return {Array<number>} Total count of rows and columns
+
+### sheets.paddedEmptyMatrix(data)
+
+Generate a empty matrix from startRow,startCol
+
+* @param {number} totalRow no of total rows in raw v4 data
+* @param {number} totalCol no of total cols in raw v4 data
+* @param {number} startRow start row number
+* @param {number} startCol start col number
+* @return {Array<[{row: number, column: string, content: string}]>} A full empty matrix
+
+### sheets.paddedDataMatrix(data, rangePattern)
+
+Creates a full, padded data matrix
+
+* if the range is like 'A3:' or 'B1:C2' and there are missing
+* cells (no content) this function adds them there (unlike other functions),
+* thus you'll always have full matrix like B1:C2 -->
+* [
+    [
+      { row: 1, column: "B", content: "B1" },
+      { row: 1, column: "C", content: "C1" },
+    ],
+    [
+      { row: 2, column: "B", content: "" },
+      { row: 2, column: "C", content: "C2" },
+    ],
+  ]
+* or in either case it will return raw v4 response like, A:B --> [[A1, B1], ['', B2]]
+* 
+* @param  {Array}   data     Sheet document id
+* @param  {String}  rangePattern Range info
+* @return {Array<[]>}  A full data matrix
+
 ## Changelog
 
+- 1.0.0: Google sheet API migration from v3 to v4
 - 0.4.3: Fixed JWT auth issue with recent Google API
 - 0.4.2: Updated dependencies / fixed vulnerabilities
 - 0.4.1: Fixed the double letter range issue, like: `A1:AA5`
