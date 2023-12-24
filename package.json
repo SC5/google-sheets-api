@@ -26,9 +26,9 @@
   "dependencies": {
     "excel-column-name": "^1.0.1",
     "googleapis": "^59.0.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "polyfill-promise": "^4.0.0",
-    "request": "^2.54.0"
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "jasmine": "^2.2.1",
